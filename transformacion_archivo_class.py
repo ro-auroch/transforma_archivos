@@ -1,4 +1,4 @@
-"""Script para remplazar una cadena de caracteres por otra """
+"""Script para remplazar buscar, insertar, copiar, modificar cadenas de texto """
 
 import fileinput #genera un stream de caracteres para comparar
 import os #manejo de rutas de directorios
@@ -29,6 +29,7 @@ class modificar_archivo:
         self.count=count
         return lista_archivos
 
+    #Busca archivos mediante una expresión regular    
     def buscar_archivo_inicia_con(self, comienza_con, directorio, extension):
         lista_archivos=[]
         count=0
@@ -69,7 +70,6 @@ class modificar_archivo:
             r=archivo
             with fileinput.FileInput(archivo, inplace=0) as archivo: #, backup='.bak'
                 for line in archivo:
-                   
                     if(self.exp_regular.search(line)):
                         print(r, end='\n')
                         print('se encontro cadena~: ',line, end='\n')
@@ -112,10 +112,6 @@ class modificar_archivo:
         
     def copiar_archivo(self, fuente, destino):
         copy2(fuente, destino)
-        """try:
-            copy2(fuente, destino)
-        except:
-            print("Error al copiar archivo")"""
         
 
             
