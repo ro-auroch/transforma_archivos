@@ -1,4 +1,4 @@
 # transforma_archivos
--modify files with python
--Find files
--Insert into files
+Modify files with python<br>
+*Find, Insert, modify string in files<br>
+*Copy files
